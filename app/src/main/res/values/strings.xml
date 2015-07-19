@@ -4,4 +4,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_connect">ConnectActivity</string>
+    <string name="conection.ipinput">IP of Your RPi Running PiMultiTap</string>
+    <string name="connection.connectbtn">Connect</string>
+    <string name="connection.cancelbtn">Cancel</string>
+    <string name="connection.desc">Type IP of RPi then click the butthon to connect</string>
 </resources>
