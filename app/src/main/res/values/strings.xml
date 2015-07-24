@@ -8,6 +8,8 @@
     <string name="connection.connectbtn">Connect</string>
     <string name="connection.cancelbtn">Cancel</string>
     <string name="connection.desc">Type IP of RPi then click the butthon to connect.</string>
+    <string name="connection.connecting">Connecting...</string>
     <string name="connection.connected">Connected.</string>
     <string name="connection.failed">Failed Establishing Connection.</string>
+    <string name="connection.notpimultitap">Error : Not a PiMultiTap Server</string>
 </resources>

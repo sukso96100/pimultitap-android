@@ -2,11 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/classes-5910548f8b80ac2ce8e9161fc0fbf4ad0fec6223.jar" />
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/classes-913aac79ad34706549205072ec0908a7c0632c6c.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/gson-2.3.1-b76baede087c6221ffa4602a6960c41b295da6d6.jar" />
     </item>
     <item
         jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
@@ -16,25 +23,18 @@
         <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-130642aa0269984d06d94b606220e9ea2f9992f8.jar" />
     </item>
     <item
-        jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/classes-913aac79ad34706549205072ec0908a7c0632c6c.jar" />
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/classes-5910548f8b80ac2ce8e9161fc0fbf4ad0fec6223.jar" />
     </item>
     <item
-        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.4.0/5b72bf48563ea8410e650de14aa33ff69a3e8c35/okio-1.4.0.jar"
+        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
-        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/okio-1.4.0-bc643194c4d367dba90e9127e3b54d2d43b33e73.jar" />
-    </item>
-    <item
-        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.4.0/40340c0748190fe897baf7bffbc1b282734294e5/okhttp-2.4.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
-        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/okhttp-2.4.0-5bdeda05729d17413ca3737816557f81a8a378f7.jar" />
+        sha1="a681c044244d9fc375198588297a39ba78028423">
+        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/retrofit-1.9.0-50206bdf2f3a14408f70221a0ac05181807f4e60.jar" />
     </item>
     <item
         jar="/home/youngbin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"

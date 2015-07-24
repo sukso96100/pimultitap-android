@@ -2,30 +2,21 @@ package com.youngbin.pimultitap;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.Preference;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.Headers;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
+import com.google.gson.JsonObject;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class ConnectActivity extends AppCompatActivity {
@@ -36,9 +27,8 @@ public class ConnectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect);
         getSupportActionBar().hide();
-
+        
         final Context mContext = ConnectActivity.this;
-        final OkHttpClient client = new OkHttpClient();
         Button ConnectBtn = (Button)findViewById(R.id.connectbtn);
         Button CancelBtn = (Button)findViewById(R.id.cancelbtn);
         final TextView StateTxt = (TextView)findViewById(R.id.state);
@@ -48,47 +38,28 @@ public class ConnectActivity extends AppCompatActivity {
         ConnectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-            final String IP = IPInput.getText().toString();
-                Log.d("TAG","http://"+IP+"/getinfo");
-                Request request = new Request.Builder()
-                        .url("http://"+IP+"/getinfo")
+                StateTxt.setText(getResources().getString(R.string.connection_connecting));
+                RestAdapter restAdapter = new RestAdapter.Builder()
+                        .setEndpoint("http://"+IPInput.getText())
                         .build();
 
-                client.newCall(request).enqueue(new Callback() {
-
+                PiMultiTapServer.PiMultiTapREST rest = restAdapter.create(PiMultiTapServer.PiMultiTapREST.class);
+                rest.getInfo(new Callback<JsonObject>() {
                     @Override
-                    public void onFailure(Request request, IOException e) {
-//                        StateTxt.setText(getResources().getString(R.string.connection_failed));
-
-//                        Toast.makeText(mContext,getResources().getString(R.string.connection_failed),Toast.LENGTH_SHORT).show();
-                        Log.d("TAG","http://"+IP+"/getinfo"+" - FAIL");
+                    public void success(JsonObject jsonObject, Response response) {
+                        Log.d("JSON RES",jsonObject.toString());
+                        Log.d("JSON RES",jsonObject.get("pimultitap").toString());
+                        if(jsonObject.get("pimultitap").getAsString().equals("PiMultiTap")){
+                            StateTxt.setText(getResources().getString(R.string.connection_connected));
+                        }else{
+                            StateTxt.setText(getResources().getString(R.string.connection_notpimultitap));
+                        }
                     }
 
                     @Override
-                    public void onResponse(Response response) throws IOException {
-                        if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
-
-                        Log.d("TAG","http://"+IP+"/getinfo"+" - OK");
-                        String BODY = response.body().toString();
-                        JSONObject JsonObj;
-                        try {
-                            JsonObj = new JSONObject(BODY);
-                            if(JsonObj.getString("pimultitap").equals("PiMultiTap")){
-                                SP.edit().putString("pimultitap_name",JsonObj.getString("name")).apply();
-                                SP.edit().putString("pimultitap_desc",JsonObj.getString("desc")).apply();
-                                SP.edit().putString("pimultitap_ip",IP).apply();
-//                                StateTxt.setText(getResources()
-//                                        .getString(R.string.connection_connected)+JsonObj.getString("name"));
-//                                Toast.makeText(mContext,
-//                                        getResources().getString(R.string.connection_connected)+JsonObj.getString("name"),
-//                                        Toast.LENGTH_LONG).show();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                        System.out.println(response.body().string());
+                    public void failure(RetrofitError error) {
+                        Log.e("ERR!",error.toString());
+                        StateTxt.setText(getResources().getString(R.string.connection_failed));
                     }
                 });
             }
