@@ -17,6 +17,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.gson.JsonObject;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
@@ -28,17 +35,17 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Initialize UI and Variables
         mContext = MainActivity.this;
-        Button Btn = (Button)findViewById(R.id.btn);
         NavigationView NV = (NavigationView)findViewById(R.id.navigationView);
         NV.setNavigationItemSelectedListener(this);
         SP = PreferenceManager.getDefaultSharedPreferences(mContext);
+        String IP = SP.getString("ip","none");
         boolean firstrun = SP.getBoolean("firstrun",true);
         if(firstrun){
             startActivity(new Intent(mContext, ConnectActivity.class));
             SP.edit().putBoolean("firstrun",false).commit();
         }
-
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -51,13 +58,9 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setHomeButtonEnabled(true);
         mDrawerToggle.syncState();
 
+        //Load data then build list
+        loadData(IP);
 
-        Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(mContext, ConnectActivity.class));
-            }
-        });
     }
 
     @Override
@@ -67,5 +70,23 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(mContext, ConnectActivity.class));
         }
         return false;
+    }
+
+    void loadData(String IP){
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setEndpoint("http://"+IP)
+                .build();
+        PiMultiTapServer.PiMultiTapREST rest = restAdapter.create(PiMultiTapServer.PiMultiTapREST.class);
+        rest.getAllConfig(new Callback<JsonObject>() {
+            @Override
+            public void success(JsonObject jsonObject, Response response) {
+
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+
+            }
+        });
     }
 }
