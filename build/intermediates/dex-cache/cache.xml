@@ -2,6 +2,20 @@
 <items version="2" >
 
     <item
+        jar="/home/youngbin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-cd97e4a61bc9896aa249f35359b213e874fb854a.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-130642aa0269984d06d94b606220e9ea2f9992f8.jar" />
+    </item>
+    <item
         jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -16,20 +30,6 @@
         <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/gson-2.3.1-b76baede087c6221ffa4602a6960c41b295da6d6.jar" />
     </item>
     <item
-        jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-130642aa0269984d06d94b606220e9ea2f9992f8.jar" />
-    </item>
-    <item
-        jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/classes-5910548f8b80ac2ce8e9161fc0fbf4ad0fec6223.jar" />
-    </item>
-    <item
         jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -37,11 +37,18 @@
         <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/retrofit-1.9.0-50206bdf2f3a14408f70221a0ac05181807f4e60.jar" />
     </item>
     <item
-        jar="/home/youngbin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-cd97e4a61bc9896aa249f35359b213e874fb854a.jar" />
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/classes-be69a55bc37a55cfc0a3d3adec8ad4786c85fc95.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/pimultitap-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/youngbin/pimultitap-android/app/build/intermediates/pre-dexed/debug/classes-5910548f8b80ac2ce8e9161fc0fbf4ad0fec6223.jar" />
     </item>
 
 </items>

@@ -12,4 +12,9 @@
     <string name="connection.connected">Connected.</string>
     <string name="connection.failed">Failed Establishing Connection.</string>
     <string name="connection.notpimultitap">Error : Not a PiMultiTap Server</string>
+
+    <string name="drawer.reconnect">Reconnect</string>
+    <string name="drawer.about">About</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">CLose</string>
 </resources>

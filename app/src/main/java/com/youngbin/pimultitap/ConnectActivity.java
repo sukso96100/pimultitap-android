@@ -26,7 +26,6 @@ public class ConnectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect);
-        getSupportActionBar().hide();
         
         final Context mContext = ConnectActivity.this;
         Button ConnectBtn = (Button)findViewById(R.id.connectbtn);
@@ -51,6 +50,10 @@ public class ConnectActivity extends AppCompatActivity {
                         Log.d("JSON RES",jsonObject.get("pimultitap").toString());
                         if(jsonObject.get("pimultitap").getAsString().equals("PiMultiTap")){
                             StateTxt.setText(getResources().getString(R.string.connection_connected));
+                            SP.edit().putString("ip",IPInput.getText().toString()).apply();
+                            SP.edit().putString("name",jsonObject.get("name").getAsString()).apply();
+                            SP.edit().putString("desc",jsonObject.get("desc").getAsString()).apply();
+                            finish();
                         }else{
                             StateTxt.setText(getResources().getString(R.string.connection_notpimultitap));
                         }
